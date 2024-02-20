@@ -17,11 +17,16 @@ to discuss what you would like to change.
 
 Team Project Members:
 
-1. **Kacper Góralewski** - team leader
+1. [**Kacper Drążyk**](https://gitlab.com/kdrazyk)
+2. [**Kacper Góralewski**](https://gitlab.com/kgoralewski) - team leader
+3. [**Eryk Maśkiewicz**](https://gitlab.com/eryk5683)
+4. [**Dominik Pluta**](https://gitlab.com/nmarcin87)
+5. [**Filip Szkudlarek**](https://gitlab.com/fszkudlarek6)
+6. [**Jakub Sobczyk**](https://gitlab.com/sobczykjakub87)
 
 Substantive help:
 
-1. **Juliusz Tarnowski** - project manager
+1. [**Juliusz Tarnowski**](https://tarnowski.io) - project manager
 
 
 ## License
