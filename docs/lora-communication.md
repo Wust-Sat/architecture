@@ -53,4 +53,5 @@ Its main drawback is low data rate, but it should be enough for telemetry.
 -   [Wikipedia](https://en.wikipedia.org/wiki/LoRa)
 -   [FossaSat-1 - satellite utilizing LoRa](https://github.com/FOSSASystems/FOSSASAT-1)
 -   [TinyGS, Open Source Global Satellite Network](https://tinygs.com/)
+-   [Store and Forward CubeSat using LoRa Technology and Private LoRaWAN-Server](https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=4657&context=smallsat)
 
