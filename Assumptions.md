@@ -26,7 +26,7 @@ per day is taken and transmitted to the ground station.
   - Radio frequency and spectrum use permissions.
   - CubeSat standards.
 
-6. The satellite should be enable to communicate even if some components stop
+6. The satellite should be able to communicate even if some components stop
 working properly and allow the download of basic telemetry.
 
 7. The prepared Engineering Module does not have to meet all the requirements,
