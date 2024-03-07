@@ -1,6 +1,3 @@
-    ⚠️ WORK IN PROGRESS ⚠️ - better research required
-
-
 # LoRaWAN in space
 
 LoRaWAN seems to offer numerous benefits over traditional data transmission solutions.
@@ -9,44 +6,29 @@ LoRaWAN seems to offer numerous benefits over traditional data transmission solu
 -   **Low barrier to entry:** cheap off the shelf ground station equipment is available.
 -   **World-wide infrastructure:** there are over 1500 ground stations in the Open Source Global Satellite Network.
 -   **High power efficiency:** LoRaWAN IoT devices can operate on battery power for years.
--   **Free frequency bands:** no license required.
+-   **Free frequency bands:** no license required (**only free bandwidths**).
 
 Its main drawback is low data rate, but it should be enough for telemetry.
 
 
 ## Technical data
 
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+|Technical data | |
+|---|---|
+|Max range | 2000 km | 
+|Data rate| 200 bps  (to space) |
+|Link budget| 155-117 dB |
+|Frequencies| 169 MHz, 433 MHz, 868 MHz (EU), 915MHz (US)|
+|Communication protocol with MCU| SPI | 
+
+## LoRa modules
+
+- [LoRa SX1278](https://nettigo.pl/products/modul-lora-ra-02-sx1278-433mhz) - used in FOSSAT-1 with Atmega328
+- [LoRa SX1301](https://www.semtech.com/products/wireless-rf/lora-core/sx1301)
 
 
-<colgroup>
-<col  class="org-left" />
-
-<col  class="org-left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left">Range</td>
-<td class="org-left">~2000km</td>
-</tr>
-
-<tr>
-<td class="org-left">Data rate</td>
-<td class="org-left">200-300bps (to space)</td>
-</tr>
-
-<tr>
-<td class="org-left">Link budget</td>
-<td class="org-left">155-170dB</td>
-</tr>
-
-<tr>
-<td class="org-left">Frequencies</td>
-<td class="org-left">169MHz, 433MHz, 868MHz (EU), 915MHz (US)</td>
-</tr>
-</tbody>
-</table>
-
+> **IMPORTANT** - satellites must use [435-438 MHz bandwidth](https://www.iaru-r1.org/wp-content/uploads/2021/03/UHF-Bandplan.pdf).
 
 # Resources
 
