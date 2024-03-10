@@ -41,7 +41,7 @@ For communication with the ground station, it's best that both devices use the s
 
  ![Radio diagram](radio_diagram.png)
 
- > *Note*: Some MCUs have an internal watchdog, such as STM32.
+ > *Note*: For redundancy, it is better to use an external watchdog.
 
 # Resources
 
