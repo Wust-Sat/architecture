@@ -30,6 +30,19 @@ Its main drawback is low data rate, but it should be enough for telemetry.
 
 > **IMPORTANT** - satellites must use [435-438 MHz bandwidth](https://www.iaru-r1.org/wp-content/uploads/2021/03/UHF-Bandplan.pdf).
 
+For communication with the ground station, it's best that both devices use the same type of module. This can ensure good compatibility.
+
+##  Libraries
+
+- For [Arduino](https://www.arduino.cc/reference/en/libraries/lora/) (there are plenty of libraries on the internet)
+- For STM32: [link1](https://github.com/SMotlaq/LoRa), [link2](https://github.com/wdomski/SX1278)
+
+## LoRa radio diagram
+
+ ![Radio diagram](radio_diagram.png)
+
+ > *Note*: Some MCUs have an internal watchdog, such as STM32.
+
 # Resources
 
 -   [Wikipedia](https://en.wikipedia.org/wiki/LoRa)
