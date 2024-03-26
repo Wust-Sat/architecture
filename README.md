@@ -5,14 +5,19 @@ as part of a team project in the summer semester 2023/24.
 
 ## Purpouse of the project
 
-At this point the goal is to create an engineering module for a nanosatellite
+At this point the goal is to create an engineering module of a nanosatellite
 that will allow testing of available solutions. The engineering module is
 intended to allow hardware-in-the-loop tests integrated with CI/CD configured
-on Gitlab. The module must have an on-board computer, communicate with the
-mockup payload, be powered by a battery charged from solar panels and be
-capable of radio communication. The beginning of ADCS should be sensors mounted
-to the module. All components should be of a size compatible with the CubeSat
-standard, or it should be possible to miniaturize them in such a way.
+on Gitlab. EPS should be responsible for both managing the battery charging 
+process from solar cells and monitoring the battery status to ensure its 
+optimal condition. To save energy, the EPS has the capability to disconnect 
+power supply to certain modules. The satellite must have an on-board computer 
+able to communicate with the mockup payload and be capable of radio 
+communication. The ADCS should incorporate sensors and actuators, and be 
+controlled by the OBC. All components should be of a size compatible with the 
+CubeSat standard, or it should be possible to miniaturize them in such a way. 
+There should be the initiation of simulation enabling the testing of some of 
+the satellite's functionalities.
 
 ## Milestones
 
@@ -27,25 +32,9 @@ requirements:
     the ground station.
  6. Completion of the CubeSat construction and integration.
 
-## Delivery
-
-Progress will be publicly available on the Gitlab group. Academic staff will be
-informed about the most important updates by e-mail or via Discord.
-
-### Documentation
-
-All project files will be made available on Gitlab. Projects will include
-documentation in the form of README and markdown files. A website presenting
-the project will be created. A hardware module integrated with CI will be built.
-
-### License
-
-Unless otherwise noted, all projects included in this group are under the
-[MIT License](https://choosealicense.com/licenses/mit/).
-
 ## Budget
 
-Several thousand zlotys. Will be determined as specific components are selected.
+Budget will be determined as specific components are selected.
 
 ## Contributing
 
@@ -86,7 +75,7 @@ Team Project Members:
    - Responsibility: electrical power system.
    - Competencies: electronics and PCB design.
 5. [**Filip Szkudlarek**](https://gitlab.com/fszkudlarek6):
-   - Responsibility: mechanics
+   - Responsibility: simulation
    - Competencies: embedded system development, programming, CAD,
       interpersonal skills, problem solving skills
 6. [**Jakub Sobczyk**](https://gitlab.com/sobczykjakub87):
@@ -97,3 +86,8 @@ Substantive help:
 
 1. [**Juliusz Tarnowski**](https://tarnowski.io):
    - Responsibility:  project manager
+
+## License
+
+Unless otherwise noted, all projects included in this group are under the
+[MIT License](https://choosealicense.com/licenses/mit/).
