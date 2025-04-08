@@ -1,126 +1,127 @@
 ---
-layout: post
 title: Issues of Earth-satellite communication
 author: Matylda Odrowąż-Wilkońska
 date: 30.03.2025
-version: v1.0
+version: v1.0.1
 ---
 
-# Issues of Earth-satellite communication
+# Issues of Earth-Satellite Communication
 
 ## Dictionary
 
-**ground station (GS)** -- an object on Earth used to communicate with a
-satellite; consists of a sufficiently large antenna and a properly tuned
-transceiver; has a limited range, usually dome-shaped
+**Ground Station** (**GS**) -- A facility on Earth used to communicate with
+satellites. Consists of a sufficiently large antenna and a properly tuned
+transceiver. Its operational range defines a coverage area, often visualized as
+a dome.
 
-**uplink** -- data transfer from the Earth to space, from the ground
-station to the satellite
+**Uplink** -- Data transfer from a ground station to a satellite.
 
-**downlink** -- data transfer from space to the Earth, from the
-satellite to the ground station
+**Downlink** -- Data transfer to a ground station from a satellite.
 
-**operator** -- the person who manages communication with the satellite,
-schedules communication sessions and sends commands (ex. downlink) to
-the satellite during the session
+**Operator** -- The person responsible for managing satellite communication,
+including scheduling communication sessions and sending commands to the
+satellite.
 
-**transmission window** -- the period during which the connection
-between the ground station and the satellite is possible (satellite\'s
-antenna is within range of the ground station's antenna); its duration
-depends on satellites elevation above the horizon
+**Transmission Window** -- The time period during which communication between
+a specific ground station and a satellite is possible (satellite is within the
+station's communication range). Its duration depends on the satellite's
+trajectory relative to the ground station, particularly the maximum elevation
+achieved during the pass.
 
-**elevation** -- maximum angle \[0;90\]° above the horizon, at which the
-satellite will be visible to the ground station; the higher the
-elevation the longer the transmission window
+**Elevation** -- The maximum angle (0° to 90°) during a pass, between the
+satellite and the local horizon from the ground station perspecive. A higher
+maximum elevation generally corresponds to a longer transmission window.
 
-The image below shows the differences in satellite\'s track within GS
-range depending on the elevation. From the left: \~10°, \~40°, \~70°.
-![elewacja](./elevation.png)
+The image below shows satellite ground tracks within the ground station's range
+for passes with different maximum elevations. From left to right: maximum
+elevations of approximately ~10°, ~40°, and ~70°.
+![elevation](./elevation.png)
 
-**communication session** -- the connection between
-satellite and GS during one transmission window, during which data and
-commands are exchanged
+**Communication Session** -- The period of active communication between the
+satellite and the ground station occurring within a single transmission window,
+during which data and commands are exchanged.
 
-**radio bands** -- the division of radio waves into frequency bands,
-mainly in terms of application, see:
-*https://en.wikipedia.org/wiki/Radio_spectrum#IEEE*
+**Radio Bands** -- The division of radio waves into frequency bands, often
+designated by convention or regulation based on usage.  
+See: [https://en.wikipedia.org/wiki/Radio_spectrum#IEEE]
 
-**UHF band** -- herr: band of frequencies 300-1000 MHz; due to fairly
-low bandwidth used mainly for command transmission and telemetry
-collection
+**UHF band** -- Band of frequencies in the 300 MHz to 1 GHz range. Due to fairly
+low bandwidth, it is often used for command transmission and telemetry
+collection.
 
-**S-Band** -- here: band of frequencies 2-4 GHz; used for downlink of
-photos and bigger files, but also for command transmission and telemetry
-collection
+**S-Band** -- Band of frequencies in the 2 GHz to 4 GHz range. Offers higher
+bandwidth suitable for downloading larger data volumes (like images or files),
+while also supporting command **uplink** and telemetry **downlink**.
 
-**CCSDS** -- an organization developing generally accepted standards for
-space communications, called CCSDS standards, which are used by space
-agencies such as NASA or ESA
+**CCSDS** (Consultative Committee for Space Data Systems) -- an organization
+developing generally accepted standards for space communications used by
+agencies like NASA and ESA.
 
-**CFDP (CCSDS File Delivery Protocol)** -- CCSDS protocol for
-communication between the satellite and the ground station
+**CFDP (CCSDS File Delivery Protocol)** -- A **CCSDS** standard protocol
+designed for reliable file transfer between spacecraft and ground systems.
 
-**LoRa, LoRaWAN** -- long-range, low-power communication protocol and
-system operating on license-free frequencies: 169 MHz, 433 MHz, 868 MHz;
-uses a proprietary spread spectrum modulation that is similar to and a
-derivative of chirp spread spectrum (CSS) modulation; not suitable for
-real-time services nor transferring large files
+**LoRa, LoRaWAN** -- A long-range, low-power communication protocol using
+license-free sub-gigahertz frequencies: (e.g., 169 MHz, 433 MHz, 868 MHz).
+Uses a proprietary spread spectrum modulation based on chirp spread spectrum
+(CSS). Well-suited for intermittent, low-data-rate transmissions, but generally
+not suitable for real-time applications or transferring large files due to
+bandwidth limitations.
 
-Official website of LoRa:
-[*https://lora-alliance.org/about-lorawan/*](https://lora-alliance.org/about-lorawan/)
+Official website of LoRa: [https://lora-alliance.org/about-lorawan/]
 
+## Problems of Communication with a Satellite
 
-## Problems of communication with a satellite
+The biggest obstacles in communication with a satellite include:
 
-The biggest obstacles in communication with a satellite are:
+1. Limited opportunities for communication
+2. Limited transmission window time
+3. No direct access to hardware
+4. Signal interference
 
-1.  Limited opportunities of communication
-2.  Limited communication time
-3.  No direct access to hardware
-4.  Interference
+### Limited Opportunities for Communication
 
-
-### 1. Limited opportunities of communication 
-
-Communication between the satellite and the ground station is usually by
-radio. Laser beam communication is under development.
+Communication between the satellite and the ground station usually relies on
+radio communication. Laser beam communication is under development.
 
 
-### 2. Limited communication time
+### Limited Communication Time
 
-At the LEO orbit (500-600 km) transmission windows are quite short,
-about several minutes. The cause is movement of the satellite in orbit.
-At this altitude one revolution around the Earth takes about 1.5 hours.
+At the LEO (500-600 km), **transmission windows** are quite short, often lasting
+only several minutes per pass over a given **ground station**. The cause is
+high orbital velocity of the satellite in orbit. At these altitudes, one
+revolution around the Earth takes about 1.5 hours.
 
-The duration of a transmission window depends on both the satellite and
-the ground station.
+The duration of a **transmission window** depends on factors related to both
+the satellite and the **ground station**.
 
-**Relative position**
+**Relative Position**
 
-The satellite and the ground station are constantly moving relative to
-each other. The station rotates around Earth's axis, while the satellite
-orbits the Earth. For successful data transfer, the satellite must be
-close enough above the station. The acceptable distance is determined
-mainly by the technical capabilities of the transmitters, receivers and
-antennas -- such as power, datarate etc. It goes without saying that in
-order to communicate, the two devices must use the same frequency,
-modulation, protocol, etc. At the same time, the power of the
-transmitted signals must not be too high, so as not to interfere with
-other devices.
+The **ground station** rotates with the Earth, while the satellite orbits the
+Earth. For successful data transfer, the satellite must pass within the
+line-of-sight and communication range of the **ground station**. The maximum
+communication distance depends on factors like transmitter power, antenna gain
+(on both satellite and **ground station**), receiver sensitivity, and the chosen
+data rate. It goes without saying that in order to communicate, the two devices
+must use the same frequency, modulation, protocol, etc. At the same time, the
+power of the transmitted signals must not be too high, to prevent interference
+with other radio services.
+
 
 **Frequencies**
 
 The available frequencies are limited -- quite a few bands are reserved
-by the military or telephony, among others. The remaining are heavily
-used by amateurs or companies, including for satellite communications.
+by the military or telephony, among others. Bands available for satellite
+communications, particularly hose suitable for small satellites can be congested.
 
-With longer wavelengths, it is easier to establish and maintain contact.
+Lower frequencies (longer wavelengths) are generally easier to establish and
+maintain contact. They experience less atmospheric dispersion and path loss. 
 Due to the small amount of energy required for propagation, successful
-transmission is possible even without directing the satellite\'s antenna
-toward the station. But the same phenomenon means that the amount of
-data transmitted is small. Hence the frequencies of the 350-450 MHz
-band, customarily referred to as the UHF band, are mainly used to
-collect telemetry and transmit commands to the satellite.
+transmission is possible even without directing the satellite's antenna
+toward the station. However, the same phenomenon limits the achievable data
+rates, which means that the amount of data transmitted is small. Hence the 
+main function of **UHF band** (often referring to the 430-440 MHz amateur
+satellite allocation for CubeSats) is to collect telemetry and transmit
+commands to the satellite.
 
 For transferring larger files, ex. photos, higher frequency bands are
 used, such as S-Band, X-Band (8000-8400 MHz), and recently also K-Band
@@ -135,7 +136,7 @@ Higher frequency transceivers are more difficult to build and operate,
 and therefore more expensive.
 
 
-### 3. No direct access to hardware
+### No Direct Access to Hardware
 
 Manual repairs of hardware are not possible. Radio failure means the end
 of the mission. A satellite from which no data can be received is dead.
@@ -144,13 +145,13 @@ modules. Also software repairs and debugging are available only to a
 limited extent.
 
 
-### 4. Interference
+### Interference
 
 The causes of interference are either natural (like solar weather or
 clouds) or artificial (other transmissions). There is no guarantee that
 all transmitted packets will be received.
 
-**Communication ensurance**
+**Communication Ensurance**
 
 There are special communication protocols adapted to space conditions.
 One of them is the CCSDS standard. Thanks to Phase Shifting Key

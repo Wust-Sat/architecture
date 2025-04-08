@@ -1,4 +1,5 @@
 ---
+title: Introduction to CubeSats
 date: 08.04.2025
 version: v1.0
 ---
