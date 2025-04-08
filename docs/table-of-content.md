@@ -1,3 +1,4 @@
 # WUST-Satellite documentation
 
-[Issues of Earth-satellite communication](./earth-satellite-communication.md)
+[Introduction to CubeSats](./cubesat-standard.md)  
+[Issues of Earth-satellite communication](./earth-satellite-communication.md)  
