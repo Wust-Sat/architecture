@@ -49,8 +49,9 @@ operating on different frequency bands/protocols:
 - **UHF** (Ultra High Frequency)
 - **S-Band**
 
-**OBC** (On-Board Computer): Serves as the central processing unit. It comprises
-two modules:
+**OBC** (On-Board Computer): Serves as the central processing unit. The detailed
+architecture is described in the [OBC documentation](./on-board-computer.md).
+It comprises two modules:
 - A **Motherboard** based on an STM32 microcontroller. This module acts as the
   supervisor of the on-board computer. Future responsibilities may include
   real-time tasks and bus communication management.
