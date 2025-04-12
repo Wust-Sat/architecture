@@ -34,7 +34,7 @@ Subsequent sections detail these architectural elements.
 
 A **module** is a distinct functional board (e.g., EPS, UHF Comm, OBC
 Motherboard). Most modules are separate PCBs based on the **Template Board**
-design. Each module is addressable units on the CAN bus.
+design. Each module is an addressable unit on the CAN bus.
 
 The WUST-Sat platform consists of the following modules:
 
