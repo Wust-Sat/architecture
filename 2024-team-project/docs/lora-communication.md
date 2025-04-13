@@ -83,34 +83,33 @@ You can use a [spreadsheet](Distance_calc.ods) to calculate the theoretical maxi
 
 Free Space Loss represents how much power loss you can tolarate in-between
 transmitting antenna and receving antenna. The equation that calculates Free Space Loss is shown below:
-$$
-L_{fs} = P_{tx} + G_{tx} - L_{tx} - L_{M} + G_{rx} - L_{rx} - P_{rx}
-$$
+
+$$ L_{fs} = P_{tx} + G_{tx} - L_{tx} - L_{M} + G_{rx} - L_{rx} - P_{rx} $$
+
 where:
 
-- $L_{fs}$ - Free Space Loss (expressed in dB).
-- $P_{tx}$ - Transmition output power (in dBm).
-- $G_{tx}$ - Transmitter antenna Gain (in dBi).
-- $L_{tx}$ - Transmitter losses (in dB). Contains all loses cables, connectors etc.
-- $L_{M}$ - Miscellaneous Losses (in dB), Contains all loses like fading margin,
+- $L_{fs}$ -- Free Space Loss (expressed in dB).
+- $P_{tx}$ -- Transmition output power (in dBm).
+- $G_{tx}$ -- Transmitter antenna Gain (in dBi).
+- $L_{tx}$ -- Transmitter losses (in dB). Contains all loses cables, connectors etc.
+- $L_{M}$ -- Miscellaneous Losses (in dB), Contains all loses like fading margin,
 body loss, polarization mismatch, etc.
-- $G_{rx}$ - Receiver antenna Gain (in dBi).
-- $L_{rx}$ - Receiver loss (in dB). Same as Transmitter losses.
-- $P_{rx}$ - Receiver sensitivity (in dBm). The minimum amount of RF 
+- $G_{rx}$ -- Receiver antenna Gain (in dBi).
+- $L_{rx}$ -- Receiver loss (in dB). Same as Transmitter losses.
+- $P_{rx}$ -- Receiver sensitivity (in dBm). The minimum amount of RF 
 power that receiver can detect.
 
 ## Range calculation
 
 If you want calculate radio link distance, you have to use this equation:
 
-$$
-d = \frac{10^{\frac{(L_{fs}-M)}{20}}}{4\pi}\cdot \lambda
-$$
+$$d = \frac{10^{\frac{(L_{fs}-M)}{20}}}{4\pi}\cdot \lambda$$
+
 where:
 
-- $L_{fs}$ - Free Space Loss (in dB).
-- $M$ - Margin (in dB). If zero, equation show ideal maximum range.
-- $\lambda$ - Wavelenght (expressed in meters).
+- $L_{fs}$ -- Free Space Loss (in dB).
+- $M$ -- Margin (in dB). If zero, equation show ideal maximum range.
+- $\lambda$ -- Wavelenght (expressed in meters).
 # Resources
 
 -   [LoRa - Wikipedia](https://en.wikipedia.org/wiki/LoRa)
