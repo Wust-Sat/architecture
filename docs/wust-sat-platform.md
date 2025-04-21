@@ -1,7 +1,7 @@
 ---
 title: WUST-Sat Platform Architecture
-date: 08.04.2025
-version: v1.0.1
+date: 21.04.2025
+version: v1.1.0
 ---
 
 # WUST-Sat Platform Architecture
@@ -15,19 +15,17 @@ structure, payload integration, and adaptation to space conditions are
 considered out of scope at this stage.
 
 
-## Platform Architecture Overview
+## Architecture Overview
 
 The WUST-Sat platform is designed as a modular system:
 - Modules are derived from a common **Template Board**.
 - Modules are interconnected via a common **bus**. A PC104 connector serves as
   the physical interface, distributing power, **CAN**, and USB lines to each
   module.
-- A 4-bit **ID** system uniquely identifies each module or addressable
+- A 4-bit hardware **ID** uniquely identifies each module or addressable
   component.
-- Communication between modules is handled using the Controller Area Network
-  (**CAN**) protocol.
-
-Subsequent sections detail these architectural elements.
+- Communication between modules is handled using the **CANopen FD** protocol
+  suite running over the Controller Area Network (**CAN**) bus.
 
 
 ## Platform Modules
@@ -36,7 +34,7 @@ A **module** is a distinct functional board (e.g., EPS, UHF Comm, OBC
 Motherboard). Most modules are separate PCBs based on the **Template Board**
 design. Each module is an addressable unit on the CAN bus.
 
-The WUST-Sat platform consists of the following modules:
+The WUST-Sat platform consists of the following module types:
 
 **EPS** (Electrical Power System): Responsible for power generation, storage,
 and distribution. Redundancy, supporting up to three independent EPS modules
@@ -103,24 +101,35 @@ signals, including:
   connections between radio modules and antennas.
 
 
-## Module Identification (ID)
+## Module Identification
 
+The platform utilizes two related identification numbers: a 4-bit hardware
+**ID**, and a 7-bit **CANopen Node-ID** used for communication. A detailed
+description of the use of CANopen features can be found in
+[Platform Communication](./platform-communication.md).
+
+**Hardware ID:**
 Each module or addressable component within the platform is assigned a unique
-4-bit **ID**. This **ID** serves two critical functions:
+4-bit **ID**. The allocation scheme is as follows:
 
-1. **CAN Message Addressing**: Identifies the source and destination of
-   messages on the **CAN** bus.
-2. **Programming Port Selection**: Determines which of the 12 USB lines on the
-   **bus** connector corresponds to the ST-Link programmer of a specific
-   STM32-based module.
+- **0 - 11**: Reserved for modules based on the **Template Board** (containing
+  an STM32 microcontroller).
+- **12 - 15**: Reserved for other addressable components, such as the **CM4**
+  within the **OBC**, or a future **payload**.
 
-The **ID** allocation scheme is as follows:
+This **ID** serves two critical functions:
+1.  **Programming Port Selection:** It determines which of the 12 independent
+    USB lines on the **bus** connector corresponds to the ST-Link programmer of
+    the STM32-based module installed in that specific slot.
+2.  **Basis for CANopen Node-ID:** It provides the input value used to calculate
+    the unique CANopen Node-ID required for bus communication, as described
+    below.
 
-**0 - 11**: Reserved for modules based on the **Template Board** (containing an
-STM32 microcontroller).
+**CANopen Node-ID:**
+For communication on the CAN bus using the **CANopen FD** protocol, each active
+CAN device (module or component like the CM4) must have a unique 7-bit
+**Node-ID** (valid range 1-127).
 
-**12 - 14**: Reserved for other addressable components, such as the **CM4**
-within the **OBC**, or a future **payload**.
-
-**15**: Broadcast address. Messages sent to this **ID** are intended for all
-components on the **CAN** bus.
+Node-ID 0 is reserved by the CANopen standard. For this reason, simple ID
+mapping is not possible. The **CANopen Node-ID** is derived directly using a
+fixed offset: `Node_ID = 16 + Hardware_ID`
