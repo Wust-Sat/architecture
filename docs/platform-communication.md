@@ -1,7 +1,7 @@
 ---
 title: WUST-Sat Platform Communication Architecture
-date: 09.04.2025
-version: v1.0.0
+date: 18.04.2025
+version: v1.0.1
 ---
 
 # WUST-Sat Platform Communication Architecture
@@ -16,7 +16,7 @@ The platform utilizes two distinct communication domains:
     satellite and ground stations for downlink, uplink, and data transfer.
 
 
-## Internal Communication: CAN Bus
+## Internal Communication
 
 The basis for internal communication is the Controller Area Network (CAN) bus,
 implemented according to the specifications described below.
@@ -43,7 +43,7 @@ routing, message type and it's context:
 | 8-15    | Message Type        | 8-bit identifier defining the purpose/content of the message.  |
 | 16      | Ground Station Flag | 1-bit flag. Set to 1 if the message originates from or is      |
 |         |                     | destined for a ground station command/telemetry stream.        |
-| 17-29   | Reserved            | 12 bits reserved for future use (e.g., sequence numbers, QoS). |
+| 17-28   | Reserved            | 12 bits reserved for future use.                               |
 
 **Message Categories:**
 CAN messages are categorized based on their function, primarily determined by
@@ -84,7 +84,7 @@ serves as the primary reference for all CAN communication related firmware
 development.
 
 
-## External Communication: Satellite-Ground Link
+## External Communication
 
 External communication involves transmitting data between the satellite and
 ground stations via RF links.
