@@ -37,6 +37,11 @@ The S-Band Communication Module is a subsystem of the satellite responsible for 
 ## Testing and Validation
 - RF validation with PlutoSDR
 
+## Current Status
+- Component selection and research for PCB design is ongoing  
+- STM32 capabilities and integration are being evaluated  
+- Research is ongoing to ensure smooth integration between CCSDS-based QPSK transmission (handling 400-byte blocks) and CANopen (limited to 64-byte frames), including encoding, segmentation, and reassembly mechanisms.
+
 
 ## Responsible Team
 - Hayrettin Ayçetin — STM programming
