@@ -122,7 +122,7 @@ All subsystems communicating over CANopen (e.g., EPS, Radio) must implement the 
 
 | Service       | Purpose/Usage                                                                |
 | ------------- | ---------------------------------------------------------------------------- |
-| **SDO**       | Read/write parameters: `System On/Off`, `Heartbeat Time`, `Status`, `Uptime` |
+| **USDO**       | Read/write parameters: `System On/Off`, `Heartbeat Time`, `Status`, `Uptime` |
 | **PDO**       | Real-time transmission of `System Status Report`, `Uptime`, `Error`          |
 | **EMCY**      | Transmit emergency messages from `Error Register` or `Last Error Code`       |
 | **Heartbeat** | Periodic presence signal in CAN network                                      |
@@ -135,7 +135,7 @@ All subsystems communicating over CANopen (e.g., EPS, Radio) must implement the 
 
 | Service       | Purpose/Usage                                                                         |
 | ------------- | ------------------------------------------------------------------------------------- |
-| **SDO**       | Configure `Frequency`, `Power`, `Start/Stop TX`, `On/Off`, `Heartbeat`; read `Buffer` |
+| **USDO**       | Configure `Frequency`, `Power`, `Start/Stop TX`, `On/Off`, `Heartbeat`; read `Buffer` |
 | **PDO**       | Transmit runtime data: `Ready for TX`, `RX Notification`, `Status`, `Error`           |
 | **EMCY**      | Report transmission errors via `Transmission Error Code`                              |
 | **Heartbeat** | Indicates radio module activity in the CAN bus                                        |
@@ -148,7 +148,7 @@ All subsystems communicating over CANopen (e.g., EPS, Radio) must implement the 
 
 | Service       | Purpose/Usage                                                       |
 | ------------- | ------------------------------------------------------------------- |
-| **SDO**       | Access local config: `Power`, `Uptime`, `Self Test`, `Status`       |
+| **USDO**       | Access local config: `Power`, `Uptime`, `Self Test`, `Status`       |
 | **PDO**       | Send live diagnostics: `Diagnostics Status`, `Node Failure Bitmask` |
 | **EMCY**      | Report system-level errors or failures                              |
 | **Heartbeat** | Broadcast own heartbeat and monitor other nodes                     |
